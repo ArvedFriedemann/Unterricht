@@ -1,0 +1,4 @@
+SELECT PersonID FROM Symptoms WHERE Test1=1 and Test2=0; --select all that healed
+SELECT count(PersonID) FROM Symptoms WHERE Test1=1 and Test2=0; --count all healed
+SELECT count(PersonID) FROM Symptoms WHERE Preparate=1 and Test1=1 and Test2=0; --count all healed due to prep 1
+SELECT count(PersonID) FROM Symptoms WHERE Preparate=2 and Test1=1 and Test2=0; --count all healed due to prep 2

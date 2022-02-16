@@ -1,0 +1,7 @@
+CREATE TABLE Symptoms(
+	PersonID Int,
+  Preparate Int,
+  Test1 Bool,
+  Test2 Bool,
+  PRIMARY KEY (PersonID)
+);
