@@ -4,12 +4,11 @@ import Data.List
 
 --randomIO, randomRIO
 
-dataPoints = 250
-smallContactCount = 20
+dataPoints = 1000
 maxdegree = 5
 
-preparates = 2
-catchChance = 0.2
+preparates = 3
+catchChance = 0.7
 noMedHealChance = 0.3
 withMedHealChanceA = noMedHealChance
 withMedHealChanceB = noMedHealChance*2
@@ -29,21 +28,30 @@ createData = do
     healed <- case catch of
       False -> return False
       True -> case prep of
-        1 -> drawChance catchChance
-        2 -> drawChance catchChance
+        1 -> drawChance catchChance --control group
+        2 -> drawChance withMedHealChanceA
+        3 -> drawChance withMedHealChanceB
         _ -> error ""
     return (i,prep,fromEnum catch, fromEnum healed)
 
 createDB :: String -> IO ()
 createDB filename = do
   db <- createData
-  writeFile filename "INSERT INTO Symptoms(PersonID, Preparate, Test1, Test2) VALUES"
+  writeFile filename "INSERT INTO Symptoms(PersonID, Preparate, Test1, Test2) VALUES\n"
   appendFile filename $ concat $ intersperse ",\n" $ (flip map) db $ \(i,p,t1,t2) ->
     "    ("++(concat $ intersperse "," (show <$> [i,p,t1,t2]))++")"
   appendFile filename ";"
 
 
-createContacts :: IO [(Int,Int)]
-createContacts = concat <$> forM [1..smallContactCount] $ \i -> do
-  contacts <- forM [1..maxdegree] (randomRIO (1,smallContactCount))
+createContacts :: Int -> IO [(Int,Int)]
+createContacts contactCount = (concat <$>) $ forM [1..contactCount] $ \i -> do
+  contacts <- forM [1..maxdegree] (const $ randomRIO (1,contactCount))
   return $ zip (repeat i) contacts
+
+createContactDB :: Int -> String -> IO ()
+createContactDB contactCount filename = do
+  db <- createContacts contactCount
+  writeFile filename "INSERT INTO Contacts(PersonID, ContactID) VALUES\n"
+  appendFile filename $ concat $ intersperse ",\n" $ (flip map) db $ \(i,p) ->
+    "    ("++(concat $ intersperse "," (show <$> [i,p]))++")"
+  appendFile filename ";"
