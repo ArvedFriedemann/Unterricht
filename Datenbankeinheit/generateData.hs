@@ -5,6 +5,8 @@ import Data.List
 --randomIO, randomRIO
 
 dataPoints = 250
+smallContactCount = 20
+maxdegree = 5
 
 preparates = 2
 catchChance = 0.2
@@ -39,3 +41,9 @@ createDB filename = do
   appendFile filename $ concat $ intersperse ",\n" $ (flip map) db $ \(i,p,t1,t2) ->
     "    ("++(concat $ intersperse "," (show <$> [i,p,t1,t2]))++")"
   appendFile filename ";"
+
+
+createContacts :: IO [(Int,Int)]
+createContacts = concat <$> forM [1..smallContactCount] $ \i -> do
+  contacts <- forM [1..maxdegree] (randomRIO (1,smallContactCount))
+  return $ zip (repeat i) contacts

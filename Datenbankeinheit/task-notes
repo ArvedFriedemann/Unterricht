@@ -1,0 +1,17 @@
+--TODO: A Levels only do selects...
+
+Select and Join Tasks:
+Task1: Find out which supplement was effective
+Task2: Join People with their additional symptoms. Find out which supplement caused more side effects.
+Task3: There is a table who met whom. find all 2nd degree contacts. Is there a query for arbitrary degree contacts?
+
+Homework:
+Work in Group os 2 - 3 people
+Create a Database with medication types, sideeffects, and healing effects. Query this database for possible treatments of a condition and find a combination of supplements that has the least side effects to treat the condition.
+
+Product Construction:
+Solve Tic Tac Toe
+
+Joins:
+Is a Text atomic? (Yes, but no.)
+Create a database containing lists.

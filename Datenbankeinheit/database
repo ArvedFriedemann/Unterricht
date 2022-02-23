@@ -5,3 +5,8 @@ CREATE TABLE Symptoms(
   Test2 Bool,
   PRIMARY KEY (PersonID)
 );
+
+CREATE TABLE Contacts(
+	PersonID Int,
+  ContactID Int
+);
