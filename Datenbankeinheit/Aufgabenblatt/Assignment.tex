@@ -1,0 +1,23 @@
+\documentclass[]{article}
+
+\begin{document}
+\title{Medizinische Datenverarbeitung mit SQL}
+\maketitle
+
+\section*{Medikamentenwirksamkeit}
+
+Das ansässige Medizinische Forschungsinstitut hat eine Versuchsreihe eines Medikaments gegen Desidia aufgestellt. Aufgrund der Geschwindigkeit der Ausbreitung der Krankheit werden die Ergebnisse schnellstmöglich benötigt. 
+Die Daten sind in einer Tabelle "Symptoms" Organisiert:\\
+
+\begin{tabular}{lllll}
+\multicolumn{1}{l|}{Symptoms} & \multicolumn{1}{l|}{PersonID} & \multicolumn{1}{l|}{Treatment} & \multicolumn{1}{l|}{Test1} & \multicolumn{1}{l|}{Test2} \\ \cline{2-5} 
+                              & 32                            & 1                              & 1                          & 0                          \\
+                              & 33                            & 3                              & 1                          & 1                          \\
+                              & ...                           & ...                            & ...                        & ...                       
+\end{tabular}
+
+"PersonID" ist die Identifikationsnummer des Testsubjekts. "Treatment" Enthält die Behandlung des subjekts, wobei "1" ein Placebo ist, "2" ein Präparat des Typs "A" und "3" ein Präparat des Typs "B". "Test1" und "Test2" sind die Tests auf die Krankheit, die jeweils in einem Abstand von 2 Wochen durchgeführt wurden. Eine "1" bedeutet, dass der Test positiv, eine "0" dass er negativ war. 
+
+\textbf{Aufgabe:} Entwerfen sie eine (oder mehrere) SQL-Abfragen mit mit denen sie die Wirksamkeit von Präparat "A" und Präparat "B" gegenüber der Kontrollgruppe ermitteln können.
+
+\end{document}

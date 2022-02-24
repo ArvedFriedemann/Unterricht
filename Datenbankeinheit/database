@@ -1,9 +1,8 @@
 CREATE TABLE Symptoms(
 	PersonID Int,
-  Preparate Int,
+  Treatment Int,
   Test1 Bool,
-  Test2 Bool,
-  PRIMARY KEY (PersonID)
+  Test2 Bool
 );
 
 CREATE TABLE Contacts(
