@@ -38,7 +38,7 @@ createData = do
 createDB :: String -> IO ()
 createDB filename = do
   db <- createData
-  writeFile filename "INSERT INTO Symptoms(PersonID, Preparate, Test1, Test2) VALUES\n"
+  writeFile filename "INSERT INTO Symptoms(PersonID, Treatment, Test1, Test2) VALUES\n"
   appendFile filename $ concat $ intersperse ",\n" $ (flip map) db $ \(i,p,t1,t2) ->
     "    ("++(concat $ intersperse "," (show <$> [i,p,t1,t2]))++")"
   appendFile filename ";"
@@ -46,7 +46,8 @@ createDB filename = do
 
 createContacts :: Int -> IO [(Int,Int)]
 createContacts contactCount = (concat <$>) $ forM [1..contactCount] $ \i -> do
-  (nub -> contacts) <- forM [1..maxdegree] (const $ randomRIO (1,contactCount))
+  ccount <- (randomRIO (1,maxdegree)) :: IO Int
+  (nub -> contacts) <- forM [1..ccount] (const $ randomRIO (1,contactCount))
   return $ zip (repeat i) contacts
 
 createContactDB :: Int -> String -> IO ()
@@ -77,3 +78,17 @@ createLongJoin2 n = "SELECT count(DISTINCT "++c n++".ContactID) FROM "++(recursi
 
 for :: [a] -> (a -> b) -> [b]
 for = flip map
+
+
+createPhoneNumbers :: IO [(Int,Int)]
+createPhoneNumbers = forM [1..dataPoints-68] $ \i -> do
+  number <- (randomRIO (100000,999999)) :: IO Int
+  return (i,number)
+
+createPhoneNumberDB :: String -> IO ()
+createPhoneNumberDB filename = do
+  db <- createPhoneNumbers
+  writeFile filename "INSERT INTO PhoneNumbers(PersonID, Number) VALUES\n"
+  appendFile filename $ concat $ intersperse ",\n" $ (flip map) db $ \(i,p) ->
+    "    ("++(concat $ intersperse "," (show <$> [i,p]))++")"
+  appendFile filename ";"

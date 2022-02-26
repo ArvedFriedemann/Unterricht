@@ -1,9 +1,11 @@
 SELECT PersonID FROM Symptoms WHERE Test1=1 and Test2=0;
 SELECT count(PersonID) FROM Symptoms WHERE Test1=1 and Test2=0;
-SELECT count(PersonID) FROM Symptoms WHERE Preparate=1 and Test1=1 and Test2=0;
-SELECT count(PersonID) FROM Symptoms WHERE Preparate=2 and Test1=1 and Test2=0;
-SELECT count(PersonID) FROM Symptoms WHERE Preparate=3 and Test1=1 and Test2=0;
+SELECT count(PersonID) FROM Symptoms WHERE Treatment=1 and Test1=1 and Test2=0;
+SELECT count(PersonID) FROM Symptoms WHERE Treatment=2 and Test1=1 and Test2=0;
+SELECT count(PersonID) FROM Symptoms WHERE Treatment=3 and Test1=1 and Test2=0;
 
+SELECT p.PersonID, p.Number FROM Symptoms as s, PhoneNumbers as p WHERE s.Test1 = 1 AND s.PersonID = p.PersonID;
+SELECT count(p.PersonID) FROM Symptoms as s, PhoneNumbers as p WHERE s.PersonID = p.PersonID;
 
 SELECT ContactID FROM Contacts WHERE PersonID=3;
 SELECT DISTINCT snd.ContactID FROM Contacts as fst, Contacts as snd WHERE fst.PersonID=3 and fst.ContactID=snd.PersonID;

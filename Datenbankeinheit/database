@@ -5,6 +5,11 @@ CREATE TABLE Symptoms(
   Test2 Bool
 );
 
+CREATE TABLE PhoneNumbers(
+	PersonID Int,
+	Number Int
+);
+
 CREATE TABLE Contacts(
 	PersonID Int,
   ContactID Int

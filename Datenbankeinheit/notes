@@ -1,2 +1,56 @@
 Funktionierender Editor:
 https://www.mycompiler.io/new/sql
+
+Prolog:
+Stellungnahme Ukrainekonflikt
+- Solidarität mit Ukrainischer Bevölkerung. Betroffenheit von Kolleg*innen
+- Betonung: Konflikt nicht auf den Schulhof, nach Hause oder ins Internet tragen. Niemand hier hat etwas damit zu tun, Streits auf dem Schulhof schlichten.
+
+Kurze Pause (halbe Minute). Übergang zum eigentlichen Thema.
+
+Einleitung: Ansässiges Medizinforschungsinstitut hat mir Daten zugesteckt, die ausgewertet werden müssen. Wer will das per Hand machen?
+Ziel der Stunde: Ihr Prüft die Wirksamkeit der beiden Präparate
+
+Einführung SQL:
+Kurz die Tabelle an die Tafel bringen, dann die Signatur, dann die SQL Tabellenkreierung.
+"Wenn ihr eine Eingabesprache bauen würdet, wo ihr Werte aus einer Tabelle auswählt, wie würdet ihr den Befehl nennen?"
+Stetiger Aufbau eines SELECT Befehls.
+Zunächst: Auswahl aller Werte aus der Symptoms Tabelle.
+
+Intermezzo: Ladet mal die erste Datenbank in das Online Interface und probiert die erste Query aus.
+
+Dann: Auswahl bestimmter Spalte "Projektion". Spalte kann auch verdoppelt werden.
+Dann: Auswahl bestimmter Werte mit "WHERE" , "=" und "AND" | "OR" | "NOT".
+
+Übung: Wählt alle gesund gewordenen personen aus
+
+Aggregatfunktionen: Werden noch nicht vollständig eingeführt, aber kurzes Verwendungsbeispiel
+
+Jetzt: Bearbeitet die tatsächliche Aufgabe.
+
+
+Thema 2: Produkte
+
+Einführung: Private Programmierer Geschichte. Arbeitsauftrag: Aufgabe (2) Telefonwarnungen
+
+An der Tafel: SELECT aus mehreren Tabellen. Umbenennung von Tabellen. Kurzes Beispiel an der Tafel.
+
+names(id,name)
+1 "Alice"
+2 "Bob"
+
+favCol(id,color)
+1 "red"
+2 "blue"
+
+Product names favCol
+names x favCol (names.id, names.name, favCol.id, favCol.color)
+1 "Alice" 1 "red"
+1 "Alice" 2 "blue"
+2 "Bob"   1 "red"
+2 "Bob"   2 "blue"
+
+choose: names.id=favCol.id
+
+
+Aufgabe Kontaktverfolgung. Einführung: Umbenennung mit AS um zweimal aus derselben Tabelle auszuwählen

@@ -1,23 +1,125 @@
 \documentclass[]{article}
 
+\usepackage{hyperref}
+
 \begin{document}
-\title{Medizinische Datenverarbeitung mit SQL}
+\title{\textbf{Medizinische Datenverarbeitung mit SQL}}
 \maketitle
 
-\section*{Medikamentenwirksamkeit}
+\section*{Preliminaries}
+
+\subsection*{Datenbankinterface}
+
+Für die Bearbeitung dieser Aufgaben benötigen sie ein SQL-Datenbankinterface. Dieses finden sie beispielsweise unter
+
+\url{https://www.mycompiler.io/new/sql}
+
+\subsection*{SQL-Cheat-Sheet}
+
+\begin{verbatim}
+SELECT [DISTINCT | ALL] * | spalte1 [AS alias1], spalte2 [AS alias2],...
+FROM tabelle1, tabelle2, ...
+[WHERE <PREDICATE>]
+[GROUP BY spalte1, spalte2, ... 
+[HAVING <PREDICATE> ]
+[ORDER BY spalte1 [ASC | DESC], spalte2 [ASC | DESC], ...]
+[LIMIT anzahl]
+\end{verbatim}
+Wobei hier gilt dass...
+\begin{verbatim}
+<PREDICATE> = 
+    (<Predicate> (AND | OR) <Predicate>) |
+    NOT <Predicate> |
+    OP1 ( = | != | > | < | >= | <= ) OP2 |
+    (LIKE | BETWEEN ... AND ... | IN | IS NULL)
+\end{verbatim}
+Aggregatfunktionen:
+\begin{verbatim}
+AVG, COUNT, MAX, MIN, SUM
+\end{verbatim}
+
+Da ein großer Teil von Programmierarbeit die Nutzung einer Suchmaschine ist empfehlen wir für genauere Erläuterung der Befehle eine eigene Internetrecherche/Zusammenfassung oder insbesondere die Seite 
+
+\url{https://www.w3schools.com/sql/}
+
+\newpage
+
+\section*{(1) Medikamentenwirksamkeit}
 
 Das ansässige Medizinische Forschungsinstitut hat eine Versuchsreihe eines Medikaments gegen Desidia aufgestellt. Aufgrund der Geschwindigkeit der Ausbreitung der Krankheit werden die Ergebnisse schnellstmöglich benötigt. 
-Die Daten sind in einer Tabelle "Symptoms" Organisiert:\\
+Die Daten sind in einer Tabelle "Symptoms" Organisiert:\\\ \\
 
 \begin{tabular}{lllll}
 \multicolumn{1}{l|}{Symptoms} & \multicolumn{1}{l|}{PersonID} & \multicolumn{1}{l|}{Treatment} & \multicolumn{1}{l|}{Test1} & \multicolumn{1}{l|}{Test2} \\ \cline{2-5} 
                               & 32                            & 1                              & 1                          & 0                          \\
                               & 33                            & 3                              & 1                          & 1                          \\
                               & ...                           & ...                            & ...                        & ...                       
-\end{tabular}
+\end{tabular}\\\ \\
 
 "PersonID" ist die Identifikationsnummer des Testsubjekts. "Treatment" Enthält die Behandlung des subjekts, wobei "1" ein Placebo ist, "2" ein Präparat des Typs "A" und "3" ein Präparat des Typs "B". "Test1" und "Test2" sind die Tests auf die Krankheit, die jeweils in einem Abstand von 2 Wochen durchgeführt wurden. Eine "1" bedeutet, dass der Test positiv, eine "0" dass er negativ war. 
 
 \textbf{Aufgabe:} Entwerfen sie eine (oder mehrere) SQL-Abfragen mit mit denen sie die Wirksamkeit von Präparat "A" und Präparat "B" gegenüber der Kontrollgruppe ermitteln können.
+
+
+
+\newpage
+
+\section*{(2) Telefonwarnungen}
+
+Als die Impfstoffe verteilt werden sollen gab es Behörden, die aufgrund von Manueller Verarbeitung und händischem Telefonieren nicht hinter dem Vergeben der Termine hinterher gekommen sind. Bei einer dieser Behörden kamen zufällig zwei Privatmenschen, die aus der Datenbank der Behörde automatisch die Telefonnummern extrahiert und die Einladungs-SMS verschickt haben. Wir werden immer häufiger in Situationen landen, wo wir durch Digitale Kompetenzen tausenden von Menschen helfen können. In diesem Beispiel erhaltet ihr ergänzend zu den Daten der vorherigen Aufgabe eine Tabelle mit den Telefonnummern der Subjekte. \\\ \\
+
+\begin{tabular}{lll}
+\multicolumn{1}{l|}{PhoneNumbers} & \multicolumn{1}{l|}{PersonID} & \multicolumn{1}{l|}{Number} \\ \cline{2-3} 
+                                  & 24                            & 283402                      \\
+                                  & 25                            & 295937                      \\
+                                  & ...                           & ...                        
+\end{tabular}\\\ \\
+
+\textbf{Aufgabe} Findet die Telefonnummern aller Teilnehmenden, die im ersten Test ein positives Ergebnis hatten
+
+
+\newpage
+
+\section*{(3) Kontaktverfolgung}
+
+Eine Behörde möchte die zur Eindämmung der Krankheit notwendige Kontaktverfolgung mithilfe von Faxgeräten und manuellem Einsehen der Daten vornehmen. Dies wäre fatal bei einer schnell ausbreitenden Krankheit. Ihr arbeitet als Praktikant*in in der Behörde und habt Zugriff auf die Kontaktdatenbank mit der Tabelle "Contacts":\\\ \\
+
+\begin{tabular}{lll}
+\multicolumn{1}{l|}{Contacts} & \multicolumn{1}{l|}{PersonID} & \multicolumn{1}{l|}{ContactID} \\ \cline{2-3} 
+                              & 42                            & 39                             \\
+                              & 42                            & 12                             \\
+                              & ...                           & ...                           
+\end{tabular}\\\ \\
+
+Welche eine n-zu-m-Beziehung von Personen "PersonID" zu ihren Kontakten "ContactID" darstellt.\\\ \\
+
+
+\textbf{Aufgabe:} Verhindert aktiv, dass die vorherrschenden Bürokratischen Strukturen unser Gemeinwohl gefährden und erstellt eine SQL-Abfrage die...
+\begin{itemize}
+	\item ...automatisch die Kontakte 2. Grades einer bestimmten Person ermittelt
+	\item ...automatisch die Kontakte 3. Grades einer bestimmten Person ermittelt
+\end{itemize}
+Überlegt außerdem:
+\begin{itemize}
+	\item wie sieht eine Anfrage für die Kontaktverfolgung n-ten Grades aus?
+	\item gibt es eine \underline{endliche} Abfrage für die Kontaktverfolgung n-ten Grades? (Die das n beispielsweise aus einer Tabelle ausliest?)
+\end{itemize}
+
+
+\newpage
+
+\section*{(4) Projekt: Watson}
+
+Das Medizinwissen der Menschheit kann von keiner einzelnen Ärtzt*in der Welt mehr alleine im Kopf behalten werden. Um dennoch einen stetigen Anstieg der Qualität von Behandlungen sicher zu stellen wird an medizinischen Datenbanken geforscht (wie zum Beispiel in der Arbeitsgruppe Bio-Ontology Research Group (BORG) an der KAUST Universität). Eure Aufgabe ist es in einer Gruppe von 3 bis 4 Leuten eine solche Datenbank zu entwerfen. \\\ \\
+
+
+\textbf{Aufgabe:} Eure Datenbank soll folgendes Problem behandeln:
+
+Jedes Medikament hat Wirkungen und Nebenwirkungen. Eine Wirkung entfernt ein Krankheitssymptom, eine Nebenwirkung erzeugt ein Symptom. Erstellt eine Datenbank in dritter Normalform und die dazugehörigen SQL-Abfragen, sodass ihr zur Heilung eines Symptoms bis zu drei Medikamente wählen könnt die insgeex
+samt minimale Nebenwirkungen haben. Ihr könnt darüber hinaus noch weitere Tabellen erstellen, die Zusatzinformationen wie z.B. Dosierungen oder Vorerkrankungen ausgeben und berücksichtigen. 
+
+Die Zeit für diese Aufgabe sind drei Schulstunden plus Hausaufgaben. Es kann passieren, dass ihr die Hauptaufgabe bis dahin noch nicht gelöst habt; stellt jedoch dann sicher, dass ihr bereits so viele Funktionen eurer Datenbank präsentieren könnt wir möglich. Eure Datenbank sollte mindestens zwei Tabellen beinhalten, die gegenseitig mit Primär und Fremdschlüsseln arbeiten und es sollten mindestens die im Unterricht behandelten SQL-Abfragetypen zum Einsatz kommen. 
+
+
 
 \end{document}
