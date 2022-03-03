@@ -1,0 +1,23 @@
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" xmlns:ns1="http://www.inkscape.org/namespaces/inkscape" xmlns:ns2="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:ns3="http://www.w3.org/1999/xlink" width="35.776218mm" height="12.768738mm" viewBox="0 0 35.776218 12.768738" version="1.1" id="svg5" ns1:version="1.1.1 (3bf5ae0d25, 2021-09-20)" ns2:docname="assets.svg">
+  <ns2:namedview id="namedview7" pagecolor="#505050" bordercolor="#eeeeee" borderopacity="1" ns1:pageshadow="0" ns1:pageopacity="0" ns1:pagecheckerboard="0" ns1:document-units="mm" showgrid="false" ns1:snap-nodes="false" ns1:snap-others="true" ns1:zoom="1.4142136" ns1:cx="159.45258" ns1:cy="194.10081" ns1:window-width="1920" ns1:window-height="1016" ns1:window-x="0" ns1:window-y="0" ns1:window-maximized="1" ns1:current-layer="layer9" ns1:snap-center="true" />
+  <ns0:defs id="defs2">
+    <ns0:linearGradient ns1:collect="always" id="linearGradient66162">
+      <ns0:stop style="stop-color:#1ead00;stop-opacity:1" offset="0" id="stop66158" />
+      <ns0:stop style="stop-color:#000000;stop-opacity:0;" offset="1" id="stop66160" />
+    </ns0:linearGradient>
+    <ns0:linearGradient ns1:collect="always" ns3:href="#linearGradient66162" id="linearGradient66164" x1="58.871605" y1="17.120041" x2="64.862465" y2="17.030125" gradientUnits="userSpaceOnUse" />
+  </ns0:defs>
+  <ns0:g ns1:groupmode="layer" id="layer9" ns1:label="Layer 8" transform="translate(-29.086251,-7.9878846)">
+    <ns0:path style="display:inline;fill:#474747;fill-opacity:1;stroke:#ffffff;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" d="m 48.790638,20.481637 h 7.332501 l -0.733942,-0.723411 c -2.625852,-0.608197 -2.294087,-1.917174 -2.932308,-2.996321 -0.480655,1.133133 -0.356339,2.425416 -2.974174,2.996321 z" id="path1228-9" ns2:nodetypes="cccccc" />
+    <ns0:rect style="display:inline;fill:#2b47e2;fill-opacity:1;stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1" id="rect973-36" width="8.4822178" height="4.6466293" x="48.260372" y="13.671319" ry="0.77995449" />
+    <ns0:rect style="display:inline;fill:#2b47e2;fill-opacity:1;stroke:#000000;stroke-width:0.250989;stroke-opacity:1" id="rect973-3-0" width="8.0464087" height="4.4078894" x="48.449196" y="13.803731" ry="0.73988104" />
+    <ns0:path style="display:inline;fill:none;stroke:#000197;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" d="m 49.834245,16.48098 c 1.253868,1.168129 3.364118,1.252176 5.084533,0" id="path6553-6" ns2:nodetypes="cc" />
+    <ns0:circle style="display:inline;fill:#000197;fill-opacity:1;stroke:#000197;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path7516-2" cx="50.99411" cy="15.340405" r="0.42004237" />
+    <ns0:circle style="display:inline;fill:#000197;fill-opacity:1;stroke:#000197;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path7516-6-6" cx="53.860722" cy="15.340405" r="0.42004237" />
+    <ns0:path style="display:inline;fill:#474747;fill-opacity:1;stroke:#ffffff;stroke-width:0.264583px;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1" d="m 48.79064,20.481638 h 7.332501 l -0.733942,-0.723411 c -2.625852,-0.608197 -2.294087,-1.917174 -2.932308,-2.996321 -0.480655,1.133133 -0.356339,2.425416 -2.974174,2.996321 z" id="path1228-5-1" ns2:nodetypes="cccccc" />
+    <ns0:rect style="display:inline;fill:#2b47e2;fill-opacity:1;stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1" id="rect973-6-8" width="8.4822178" height="4.6466293" x="48.260372" y="13.671319" ry="0.77995449" />
+    <ns0:rect style="display:inline;fill:#2b47e2;fill-opacity:1;stroke:#000000;stroke-width:0.250989;stroke-opacity:1" id="rect973-3-2-7" width="8.0464087" height="4.4078894" x="48.4492" y="13.803731" ry="0.73988104" />
+    <ns0:circle style="display:inline;fill:#000197;fill-opacity:1;stroke:#000197;stroke-width:0.264583;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="path7516-6-2-0" cx="52.376511" cy="17.215555" r="0.42004237" />
+    <ns0:rect style="fill:#000197;fill-opacity:1;stroke:#000197;stroke-width:0.529167;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" id="rect101281" width="0.45127833" height="1.8051133" x="52.158642" y="14.449859" ry="0.22563916" />
+  </ns0:g>
+</ns0:svg>
