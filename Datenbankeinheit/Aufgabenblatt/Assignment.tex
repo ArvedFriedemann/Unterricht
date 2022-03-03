@@ -105,6 +105,28 @@ Welche eine n-zu-m-Beziehung von Personen "PersonID" zu ihren Kontakten "Contact
 	\item gibt es eine \underline{endliche} Abfrage für die Kontaktverfolgung n-ten Grades? (Die das n beispielsweise aus einer Tabelle ausliest?)
 \end{itemize}
 
+\textbf{Weitere Übungsaufgaben:}
+\begin{itemize}
+	\item Findet die Telefonnummern der Kontakte 2. und 3. Grades
+	\item Findet die Telefonnummern der Kontakte 2. und 3. Grades derjenigen, deren erster Test positiv war. 
+	\item Experimentiert eigenständig mit GROUP BY und findet die Anzahl der Kontakte 2. und 3. Grades für jede Person.
+	\item Ermittelt händisch das Ergebnis der folgenden Queries. Beschreibt sie erst verbal und findet dann das Ergebnis: (Übung für Klausuren. Tipp: Nur die erste 20 Einträge der Symptomtabellen müssen angeschaut werden) \\
+	\begin{itemize}\newpage
+	\item  \begin{verbatim}
+SELECT Sym1.PersonID, Sym2.PersonID 
+	FROM Symptoms as Sym1 , Contacts, Symptoms as Sym2 
+    WHERE 
+    Sym1.PersonID = Contacts.PersonID AND
+    Sym2.PersonID = Contacts.ContactID AND
+    Sym1.Treatment = 2 AND
+    Sym2.Test1 = 0 AND
+    Sym2.Test2 = 1;		
+		\end{verbatim}
+	\item \begin{verbatim}
+SELECT Treatment, COUNT(PersonID) FROM Symptoms GROUP BY Treatment
+	\end{verbatim}
+	\end{itemize}
+\end{itemize}
 
 \newpage
 
