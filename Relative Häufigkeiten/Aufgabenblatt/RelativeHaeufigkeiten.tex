@@ -3,9 +3,27 @@
 \begin{document}
 \section*{Medikamententests}
 
-Ihr seid 6 Kommunen, die jeweils für sich ein Medikament testen. Jede Kommune hat einen eigenen Datensatz aus den klinischen Versuchen. 
+\subsection*{1)}
+Ein neues Medikament soll auf Wirksamkeit überprüft werden. Ihr seid 6 Kommunen, die jeweils für sich das Medikament testen. Jede Kommune hat einen eigenen Datensatz aus den klinischen Versuchen.\\
+
+\textbf{Arbeitsauftrag I}: Tut euch in Vierergruppen zusammen
+\begin{itemize}
+	\item Besprecht, welche relativen Häufigkeiten relevant sind für die Wirksamkeit des Medikaments
+	\item Teilt unter euch auf: Erstellt eine Vier-Felder-Tafel und ein Baumdiagramm, die die Verteilungen in euren Daten beschreibt.
+	\item Ermittelt die Wirksamkeit des Medikamentes anhand der Daten, die eure Kommune gesammelt hat
+\end{itemize} 
+
+\subsection*{2)}
+Kommen alle Kommunen auf dasselbe Ergebnis?\\
+
+\textbf{Arbeitsauftrag II}: Überlegt zusammen, wie ihr eure individuellen Teilergebnisse zu einem Großen Ergebnis zusammenführen könnt. Kann man nun annehmen, dass das Medikament wirkt? Kann es jetzt in allen Kommunen ausgerollt werden?\\
+
+\textbf{Arbeitsauftrag III:} Ihr habt die Daten zusammengetragen. Wenn ihr das Medikament an alle Kommunen ausrollt: Ermittelt, wie viele Menschen ihr durch eure Zusammenarbeit gerettet habt.
+
+\newpage
 
 \subsection*{Gruppe 1}
+155000 Einwohnende\\\ \\
 \begin{tabular}{l|l|l}
 \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline1 & Ja & Nein \\
@@ -19,8 +37,11 @@ Ihr seid 6 Kommunen, die jeweils für sich ein Medikament testen. Jede Kommune h
 9 & Nein & Nein \\
 10 & Nein & Ja \\
 \end{tabular}\\
-%Analysis {cHealedWtMed = 0.6, cHealedNoMed = 0.2, medWorksGen = True}
+%Analysis {cHealedWtMed = 0.6 = 3/5, cHealedNoMed = 0.2 = 1/5, medWorksGen = True}
+
+
 \subsection*{Gruppe 2}
+152000 Einwohnende\\\ \\
 \begin{tabular}{l|l|l}
 \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline11 & Ja & Ja \\
@@ -34,8 +55,11 @@ Ihr seid 6 Kommunen, die jeweils für sich ein Medikament testen. Jede Kommune h
 19 & Ja & Nein \\
 20 & Ja & Ja \\
 \end{tabular}\\
-%Analysis {cHealedWtMed = 0.6666667, cHealedNoMed = 0.25, medWorksGen = True}
+%Analysis {cHealedWtMed = 0.6666667=4/6, cHealedNoMed = 0.25, medWorksGen = True}
+\newpage
+
 \subsection*{Gruppe 3}
+135000 Einwohnende\\\ \\
 \begin{tabular}{l|l|l}
 \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline21 & Nein & Nein \\
@@ -50,7 +74,9 @@ Ihr seid 6 Kommunen, die jeweils für sich ein Medikament testen. Jede Kommune h
 30 & Ja & Nein \\
 \end{tabular}\\
 %Analysis {cHealedWtMed = 0.6, cHealedNoMed = 0.6, medWorksGen = False}
+
 \subsection*{Gruppe 4}
+197000 Einwohnende\\\ \\
 \begin{tabular}{l|l|l}
 \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline31 & Nein & Nein \\
@@ -65,7 +91,11 @@ Ihr seid 6 Kommunen, die jeweils für sich ein Medikament testen. Jede Kommune h
 40 & Ja & Ja \\
 \end{tabular}\\
 %Analysis {cHealedWtMed = 1.0, cHealedNoMed = 0.71428573, medWorksGen = True}
+
+\pagebreak
+
 \subsection*{Gruppe 5}
+168000 Einwohnende\\\ \\
 \begin{tabular}{l|l|l}
 \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline41 & Ja & Nein \\
@@ -80,7 +110,9 @@ Ihr seid 6 Kommunen, die jeweils für sich ein Medikament testen. Jede Kommune h
 50 & Ja & Ja \\
 \end{tabular}\\
 %Analysis {cHealedWtMed = 0.6666667, cHealedNoMed = 0.75, medWorksGen = False}
+
 \subsection*{Gruppe 6}
+125000 Einwohnende\\\ \\
 \begin{tabular}{l|l|l}
 \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline51 & Ja & Ja \\
@@ -96,6 +128,23 @@ Ihr seid 6 Kommunen, die jeweils für sich ein Medikament testen. Jede Kommune h
 \end{tabular}\\
 %Analysis {cHealedWtMed = 0.625, cHealedNoMed = 0.5, medWorksGen = True}
 
+\pagebreak
 
+\subsection*{Gruppe 7}
+138000 Einwohnende\\\ \\
+\begin{tabular}{l|l|l}
+\hline
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline61 & Ja & Ja \\
+62 & Ja & Nein \\
+63 & Ja & Ja \\
+64 & Nein & Ja \\
+65 & Nein & Nein \\
+66 & Ja & Ja \\
+67 & Ja & Ja \\
+68 & Nein & Nein \\
+69 & Nein & Nein \\
+70 & Ja & Ja \\
+\end{tabular}\\
+%Analysis {cHealedWtMed = 0.8333333, cHealedNoMed = 0.25, medWorksGen = True}
 
 \end{document}

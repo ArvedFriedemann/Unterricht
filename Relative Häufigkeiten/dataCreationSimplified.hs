@@ -74,7 +74,7 @@ mkTeXData nonworks numDat chnkSz = do
 
 --putStrLn =<< (unlines . map show) <$> (map (\x -> (medWorksGen x, medWorksPrecon x))) <$> splitData 2 60 10
 --putStrLn =<< (unlines . map show) <$> splitData 2 60 10
---mkTeXData 2 60 10 >>= putStrLn
+--mkTeXData 2 70 10 >>= putStrLn
 
 
 

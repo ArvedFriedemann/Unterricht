@@ -1,0 +1,25 @@
+a1 + ... + an
+------------- = 1/n * ( sum k=1 n (ak / bk) )
+b1 + ... + bn
+
+IA: n=1
+a1 / b1 = a1 / b1
+
+IS:
+1/n * ( sum k=1 (n+1) (ak / bk) )
+= 1/n * ( a(n+1) / b(n+1) + sum k=1 n (ak / bk) )
+= a(n+1) / (n*b(n+1)) + 1/n * ( sum k=1 n (ak / bk) )
+= a(n+1) / (n*b(n+1)) + (a1 + ... + an) / (b1 + ... + bn) (IV)
+= a(n+1)(b1 + ... + bn) / (n*b(n+1))(b1 + ... + bn) + (n*b(n+1))(a1 + ... + an) / (n*b(n+1))(b1 + ... + bn)
+= (a(n+1)(b1 + ... + bn) + (n*b(n+1))(a1 + ... + an)) / (n*b(n+1))(b1 + ... + bn)
+= a(n+1)b1 + ... + a(n+1)bn + (n*b(n+1))a1 + ... + (n*b(n+1))an / (n*b(n+1))(b1 + ... + bn)
+
+=> This just doesn't work!
+
+Example:
+
+(1/10 + 1/2) / 2 = (2/20 + 10/20) = 12/20 = 6 / 10 = 3 / 5 = 18 / 30
+(2) / (12) = 1/6 = 5 / 30
+
+
+Ending: They get a certain ratio that people heal with medication of a/b and a ration that they heal without of c/d, where a/b > c/d . To see how many healed in a community with #N people due to the medication: #N*(a/b) - #N*(c/d)
