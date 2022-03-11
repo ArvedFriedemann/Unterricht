@@ -1,0 +1,31 @@
+Einleitung: Was ist der Unterschied zwischen Zufall und Relativen Häufigkeiten?
+Plenumsdiskussion.
+"Zufall ist ungenau"
+
+Wichtig: Beobachtungen sind IMMER relative häufigkeiten! Aber: Können trotzdem zufällig verzerrt sein.
+
+Warum sprechen wir bei Zufall auch von einer relativen Häufigkeit?
+-> Gesetz der großen Zahlen.
+-> Mittelwert "Im Schnitt"
+
+Projektaufgabe:
+-- Aus alten Daten relative Häufigkeiten errechnen, daraus für die Zukunft Strategien entwickeln
+-- Ziel: sehen, dass sich mit Daten strategien verändern! Geht das automatisch? Ja: Forschung und KI.
+
+--Projektideen:
+-- Projektplanung: Wie hoch ist die Wahrscheinlichkeit, dass man zu viele Aufgaben gleichzeitig hat? Problem: Schwehr zu modellieren.
+-- Pflanzenerkennung: Wie gut muss ich eine Pflanze Identifizieren können, um davon sicher genug essen zu können?...Problem: ein bisschen martialisch.
+-- Sportlichkeit: Wie kann ich analysieren, ob ich mich richtig bewege? Evtl. wichtig für Einsatzkräfte...Problem: Militärisch.
+
+
+--Was soll gelernt werden?
+-- Relative Häufigkeiten aus Beobachtungen ziehen
+-- Nutzen um Strategie für die Zukunft zu entwickeln
+-- Evtl: Abweichungen berechnen. Was ist der worst-case?
+
+--Methoden:
+-- Strategie-merge: Jede Strategie kann ihre Konfidenz angeben. Mehrere Strategien zusammenführen -> höchste Konfidenz Entscheidet.
+
+
+
+Projekt: 

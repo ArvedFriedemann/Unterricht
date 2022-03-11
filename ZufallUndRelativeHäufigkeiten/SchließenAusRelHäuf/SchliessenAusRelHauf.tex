@@ -1,0 +1,285 @@
+\documentclass[]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[margin = 1in]{geometry}
+
+\begin{document}
+
+\section*{Welches Equipment passt?}
+
+Ihr geht außerhalb eurer Ausbildung einer Nebentätigkeit nach. Manche von euch wandern mit einer Gruppe von Forschenden durch ein Biotop um Daten über die lokale Fauna zu sammeln, andere haben regelmäßige Auftritte mit einer Musikgruppe und wieder andere helfen beim Bau der lokalen Infrastruktur. Ihr habt dabei alle das Problem, dass ihr nur begrenzt viel Equipment mitnehmen könnt. Bei jeder Mission kommt ihr immer wieder in Situationen, wo ihr gerne das ein oder andere Werkzeug gehabt hättet. Sei es, dass ihr auf dem einen Einsatz gerne einen Spaten gehabt hättet um im Boden nach Leben unter der Erde suchen zu können oder dass ihr bei einem Auftritt gerne ein Outfit getragen hättet, dass zu eurem Publikum passt. Ihr müsst euch vorab entscheiden, welches Equipment ihr mitnehmt. Ihr könnt auf ein paar Missionen gehen um euch umzusehen, aber irgendwann müsst ihr euch für eine Ausstattung entscheiden und diese final kaufen. Wann ist dafür der beste Zeitpunkt?\\
+
+\subsection*{Arbeitsauftrag I:}
+\begin{itemize}
+	\item Überlegt euch eine Nebentätigkeit, die ihr euch vorstellen könntet zu machen. Überlegt euch zwei Ausrüstungsstücke, zwischen denen ihr euch entscheiden müsst, Stück \textbf{A} und \textbf{B}
+	\item Tut euch in Dreier- bis Vierergruppen zusammen mit Leuten, die auf ähnliche Missionen gehen.
+\end{itemize}
+
+\subsection*{Arbeitsauftrag II: (in den Gruppen)}
+\begin{itemize}
+	\item Eure Gruppe hat unten eine Tabelle in Anhang I, die eure vorherigen Missionen beschreibt. Diese Tabelle beschreibt, welches Werkzeug ihr in welcher Mission gebraucht hättet. Entscheidet aufgrund der Daten, welches Werkzeug (A oder B) ihr euch zulegen wollt. 
+	\item Ihr geht nun auf weitere Missionen mit dem ausgesuchten Werkzeug. Auch hier wird wieder geschaut, auf welcher Mission ihr welches Werkzeug gebraucht hättet. Die Tabellen dazu findet ihr in Anhang II. Ermittelt, ob ihr euch für das richtige Werkzeug entscheiden habt.
+	\item Vergleicht mit den anderen Gruppen. Welche Gruppe hat sich für das richtige Werkzeug entschieden? Diskutiert ob die Entscheidungen sinnvoll waren.
+	\item Schaut auf eure Daten aus Anhang II. Wie lange hättet ihr warten müssen, um euch das richtige Werkzeug zu kaufen? Hättet ihr dann noch genügend Missionen gehabt, auf denen es zum Einsatz kommt?
+\end{itemize}
+
+\section*{Wie geht man hier generell vor?}
+
+Wir wollen nun schauen, wie man dieses Problem im allgemeinen lösen könnte. Hierzu ein paar Begriffe:
+
+Die Erfahrungen, die ihr schon gemacht habt (die Missionen, auf die ihr gegangen seid), nennt man \textbf{Stichproben} oder \textbf{Versuche}. Die Anzahl der Erfahrungen, die ihr gemacht habt nennt man \textbf{Stichprobengröße}. Eine Stichprobe zählt als \textbf{positiv}, wenn ihr für ein \textit{vorher} ausgewähltes Werkzeug das richtige Werkzeug dabei gehabt hättet (Also...hättet ihr den Spaten mitgenommen und dann auch gebraucht dann war dies eine positive Stichprobe). Im allgemeinen ist eine Stichprobe positiv wenn das eingetreten ist, was untersucht werden sollte. 
+
+Das Verhältnis von der Anzahl der \textbf{positiven Stichproben} zur \textbf{Stichprobemgröße} ist die \textbf{relative Häufigkeit} des gewünschten Ereignisses. 
+
+\textbf{FRAGE:} Was ist die \textbf{Wahrscheinlichkeit}? Diskutiert im Plenum. 
+
+\subsection*{Arbeitsauftrag III: (in den Gruppen, teilweise Plenum)}
+\begin{itemize}
+	\item Ihr geht insgesamt auf 5 Missionen. Nach zwei Missionen wählt ihr euer Werkzeug, ihr habt also eine Stichprobengröße von 2 und wählt das Werkzeug aufgrund der relativen Häufigkeit. Berechnet: Wenn die relative Häufigkeit eures \textit{Werkzeugs A} bei den 5 Missionen bei $\frac{3}{5}$ liegt, wie hoch ist die Wahrscheinlichkeit, dass ihr das richtige Werkzeug wählt?\\
+	\textit{Tipp: Ihr müsst hier ziemlich viele Kombinationen durchtesten. Teilt die Fälle in eurer Gruppe auf!}
+	\item Berechnet: Wie verändert sich die obige Wahrscheinlichkeit, wenn die Stichprobengröße bei 3 liegt?
+	\item Kann man bei der relativen Häufigkeit eures \textit{Werkzeugs A} schon von einer Wahrscheinlichkeit sprechen? Warum sprechen wir von einer Wahrscheinlichkeit, das richtige Werkzeug zu wählen? Diskutiert im Plenum.
+\end{itemize}
+
+\section*{Das Zählen muss schneller gehen}
+\subsection*{Arbeitsauftrag:}
+Berechnet:
+\begin{itemize}
+	\item Wie viele Möglichkeiten gibt es für eine Stichprobengröße von 3 die eine relative Häufigkeit von $\frac{2}{3}$ hat?
+	\item Wie viele Möglichkeiten gibt es 3 Münzen so hinzulegen, dass zweimal Zahl oben liegt?
+	\item Wie viele Möglichkeiten gibt es, n Münzen so hinzulegen, dass k mal Zahl oben liegt?
+\end{itemize}
+
+
+\section*{Binomialkoeffizient}
+
+Mit dem Binomialkoeffizient könnt ihr testen, wie viele Möglichkeiten es gibt, bei n Versuchen k positive Stichproben zu bekommen. In anderen Worten: Ihr könnt berechnen, wie viele Möglichkeiten es gibt, eine relative Häufigkeit von $\frac{k}{n}$ zu beobachten. 
+
+\subsection*{Arbeitsauftrag IV: (In den Gruppen)}
+\begin{itemize}
+	\item Findet ein Vorgehen, wie ihr bei z.B. 10 Missionen ermitteln könnt, wie viele Stichproben ihr nehmen müsst um mit einer 90\% Wahrscheinlichkeit das richtige Werkzeug zu wählen
+	\item Alternativ: Wie hoch ist die Wahrscheinlichkeit, beim Messen einer relativen Häufigkeit von $\frac{5}{9}$ (und einer Stichprobengröße von 9), richtig zu liegen, wenn ihr insgesamt nur auf 10 Missionen geht?
+\end{itemize}
+
+\section*{Zum Entspannen}
+
+\subsection*{Arbeitsauftrag V: (In den Gruppen)}
+\begin{itemize}
+	\item Bearbeitet auf Seite 82 die Aufgabe 7. Mit eurem neuen Wissen über relative Häufigkeiten und Wahrscheinlichkeiten: Ergibt die Aufgabenstellung in Aufgabenteil c Sinn? Nehmt Stellung. 
+\end{itemize}
+
+\section*{Hausaufgabe}
+80, A4\\
+81, A8\\
+
+
+
+
+
+
+
+\newpage
+\section*{Anhang I}
+\subsection*{Gruppe 1}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Mission: & 1 & 2 & 3 & 4 & 5 & 6\\
+\hline
+Werkzeug: & A & B & A & A & A & A\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,True),(2,False),(3,True),(4,True),(5,True),(6,True)], restData = [(7,True),(8,True),(9,True),(10,True),(11,True),(12,True),(13,True),(14,False),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 2}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Mission: & 1 & 2 & 3\\
+\hline
+Werkzeug: & B & A & A\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,False),(2,True),(3,True)], restData = [(4,True),(5,False),(6,True),(7,True),(8,True),(9,True),(10,True),(11,False),(12,False),(13,False),(14,True),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 3}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Mission: & 1 & 2 & 3 & 4\\
+\hline
+Werkzeug: & A & A & B & B\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,True),(2,True),(3,False),(4,False)], restData = [(5,True),(6,False),(7,True),(8,False),(9,False),(10,False),(11,False),(12,False),(13,False),(14,False),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 4}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Mission: & 1 & 2 & 3 & 4 & 5 & 6\\
+\hline
+Werkzeug: & A & B & B & B & B & B\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,True),(2,False),(3,False),(4,False),(5,False),(6,False)], restData = [(7,True),(8,False),(9,False),(10,False),(11,True),(12,False),(13,False),(14,False),(15,False)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 5}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Mission: & 1 & 2 & 3 & 4 & 5 & 6\\
+\hline
+Werkzeug: & B & A & A & A & A & B\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,False),(2,True),(3,True),(4,True),(5,True),(6,False)], restData = [(7,True),(8,True),(9,False),(10,True),(11,True),(12,True),(13,True),(14,True),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 6}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Mission: & 1 & 2 & 3\\
+\hline
+Werkzeug: & A & A & A\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,True),(2,True),(3,True)], restData = [(4,False),(5,True),(6,False),(7,True),(8,True),(9,True),(10,False),(11,False),(12,False),(13,True),(14,True),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 7}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Mission: & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+\hline
+Werkzeug: & B & A & B & B & B & B & B & B & A\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,False),(2,True),(3,False),(4,False),(5,False),(6,False),(7,False),(8,False),(9,True)], restData = [(10,False),(11,False),(12,True),(13,False),(14,False),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 8}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Mission: & 1 & 2 & 3 & 4\\
+\hline
+Werkzeug: & B & A & B & B\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,False),(2,True),(3,False),(4,False)], restData = [(5,False),(6,False),(7,True),(8,False),(9,False),(10,False),(11,False),(12,False),(13,False),(14,True),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 9}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Mission: & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9\\
+\hline
+Werkzeug: & B & B & A & A & A & A & B & B & B\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,False),(2,False),(3,True),(4,True),(5,True),(6,True),(7,False),(8,False),(9,False)], restData = [(10,True),(11,False),(12,True),(13,False),(14,False),(15,True)], choice = True, wasRight = True}
+
+
+\newpage
+\section*{Anhang II}
+\subsection*{Gruppe 1}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Mission: & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\
+\hline
+Werkzeug: & A & A & A & A & A & A & A & B & A\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,True),(2,False),(3,True),(4,True),(5,True),(6,True)], restData = [(7,True),(8,True),(9,True),(10,True),(11,True),(12,True),(13,True),(14,False),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 2}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Mission: & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\
+\hline
+Werkzeug: & A & B & A & A & A & A & A & B & B & B & A & A\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,False),(2,True),(3,True)], restData = [(4,True),(5,False),(6,True),(7,True),(8,True),(9,True),(10,True),(11,False),(12,False),(13,False),(14,True),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 3}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Mission: & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\
+\hline
+Werkzeug: & A & B & A & B & B & B & B & B & B & B & A\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,True),(2,True),(3,False),(4,False)], restData = [(5,True),(6,False),(7,True),(8,False),(9,False),(10,False),(11,False),(12,False),(13,False),(14,False),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 4}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Mission: & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\
+\hline
+Werkzeug: & A & B & B & B & A & B & B & B & B\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,True),(2,False),(3,False),(4,False),(5,False),(6,False)], restData = [(7,True),(8,False),(9,False),(10,False),(11,True),(12,False),(13,False),(14,False),(15,False)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 5}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Mission: & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\
+\hline
+Werkzeug: & A & A & B & A & A & A & A & A & A\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,False),(2,True),(3,True),(4,True),(5,True),(6,False)], restData = [(7,True),(8,True),(9,False),(10,True),(11,True),(12,True),(13,True),(14,True),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 6}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Mission: & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\
+\hline
+Werkzeug: & B & A & B & A & A & A & B & B & B & A & A & A\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,True),(2,True),(3,True)], restData = [(4,False),(5,True),(6,False),(7,True),(8,True),(9,True),(10,False),(11,False),(12,False),(13,True),(14,True),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 7}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Mission: & 10 & 11 & 12 & 13 & 14 & 15\\
+\hline
+Werkzeug: & B & B & A & B & B & A\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,False),(2,True),(3,False),(4,False),(5,False),(6,False),(7,False),(8,False),(9,True)], restData = [(10,False),(11,False),(12,True),(13,False),(14,False),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 8}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+Mission: & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\\
+\hline
+Werkzeug: & B & B & A & B & B & B & B & B & B & A & A\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,False),(2,True),(3,False),(4,False)], restData = [(5,False),(6,False),(7,True),(8,False),(9,False),(10,False),(11,False),(12,False),(13,False),(14,True),(15,True)], choice = False, wasRight = True}
+
+
+\subsection*{Gruppe 9}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Mission: & 10 & 11 & 12 & 13 & 14 & 15\\
+\hline
+Werkzeug: & A & B & A & B & B & A\\
+\hline
+\end{tabular}
+%Analysis {initData = [(1,False),(2,False),(3,True),(4,True),(5,True),(6,True),(7,False),(8,False),(9,False)], restData = [(10,True),(11,False),(12,True),(13,False),(14,False),(15,True)], choice = True, wasRight = True}
+
+
+
+\end{document}
