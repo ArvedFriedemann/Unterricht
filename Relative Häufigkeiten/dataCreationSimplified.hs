@@ -51,14 +51,22 @@ analyse dat = Analysis {
 
 splitData :: Int -> Int -> Int -> IO [(Analysis,[DataPoint])]
 splitData nonworks numDat chnkSz = do
-  dat <- chunksOf chnkSz <$> create numDat
+  wholeDat <- create numDat
+  let dat = chunksOf chnkSz wholeDat
   let res = map analyse dat
-  if goodAnalysis nonworks res then return (zip res dat) else splitData nonworks numDat chnkSz
+  if
+    goodAnalysis nonworks res &&
+    medWorksGen (analyse wholeDat)
+  then return (zip res dat)
+  else splitData nonworks numDat chnkSz
 
 goodAnalysis :: Int -> [Analysis] -> Bool
 goodAnalysis nonworks ana = (nonworks == (length . filter (not . medWorksGen) $ ana)) &&
                     (all ( (/= (1/0)) . cHealedWtMed) ana) &&
-                    (all ( (/= (1/0)) . cHealedWtMed) ana)
+                    (all ( (/= (1/0)) . cHealedWtMed) ana) &&
+                    (all ( (/= 1) . cHealedWtMed) ana) && --make it nontrivial
+                    (all ( (/= 0) . cHealedWtMed) ana) &&
+                    (any (\x -> cHealedWtMed x == cHealedNoMed x) ana ) --have the question come up what happens if medication is as good with as it is without
 
 mkTeXTable :: (Analysis, [DataPoint]) -> String
 mkTeXTable (ana, dat) = "\\begin{tabular}{l|l|l}\n\\hline\n\\multicolumn{1}{|l|}{\\begin{tabular}[c]{@{}l@{}}Personen-\\\\ kennzahl\\end{tabular}} & \\begin{tabular}[c]{@{}l@{}}Medikament\\\\ genommen?\\end{tabular} & \\multicolumn{1}{l|}{Geheilt} \\\\ \\hline"
@@ -69,8 +77,9 @@ mkTeXTable (ana, dat) = "\\begin{tabular}{l|l|l}\n\\hline\n\\multicolumn{1}{|l|}
 mkTeXData :: Int -> Int -> Int -> IO String
 mkTeXData nonworks numDat chnkSz = do
   dat <- splitData nonworks numDat chnkSz
+  inhabitants <- (map (*1000)) <$> (sequence $ replicate (length dat) $ randomRIO (100,200)) :: IO [Int]
   let lst = map mkTeXTable dat
-  return $ concat ["\\subsection*{Gruppe "++show i++"}\n" ++ tab | (tab,i) <- zip lst [1..]]
+  return $ concat ["\\subsection*{Gruppe "++show i++"}\n\n"++show inhab++" Einwohnende\\\\\n\n" ++ tab | (tab,i,inhab) <- zip3 lst [1..] inhabitants]
 
 --putStrLn =<< (unlines . map show) <$> (map (\x -> (medWorksGen x, medWorksPrecon x))) <$> splitData 2 60 10
 --putStrLn =<< (unlines . map show) <$> splitData 2 60 10

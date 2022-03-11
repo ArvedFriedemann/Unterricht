@@ -4,11 +4,11 @@
 \section*{Medikamententests}
 
 \subsection*{1)}
-Ein neues Medikament soll auf Wirksamkeit überprüft werden. Ihr seid 6 Kommunen, die jeweils für sich das Medikament testen. Jede Kommune hat einen eigenen Datensatz aus den klinischen Versuchen.\\
+Ein neues Medikament soll auf Wirksamkeit überprüft werden. Ihr seid 7 Kommunen, die jeweils für sich das Medikament testen. Jede Kommune hat einen eigenen Datensatz aus einer klinischen Untersuchung.\\
 
-\textbf{Arbeitsauftrag I}: Tut euch in Vierergruppen zusammen
+\textbf{Arbeitsauftrag I}: Findet euch in Vierergruppen zusammen.
 \begin{itemize}
-	\item Besprecht, welche relativen Häufigkeiten relevant sind für die Wirksamkeit des Medikaments
+	\item Überlegt, welche relativen Häufigkeiten relevant sind für die Wirksamkeit des Medikaments
 	\item Teilt unter euch auf: Erstellt eine Vier-Felder-Tafel und ein Baumdiagramm, die die Verteilungen in euren Daten beschreibt.
 	\item Ermittelt die Wirksamkeit des Medikamentes anhand der Daten, die eure Kommune gesammelt hat
 \end{itemize} 
@@ -16,122 +16,134 @@ Ein neues Medikament soll auf Wirksamkeit überprüft werden. Ihr seid 6 Kommune
 \subsection*{2)}
 Kommen alle Kommunen auf dasselbe Ergebnis?\\
 
-\textbf{Arbeitsauftrag II}: Überlegt zusammen, wie ihr eure individuellen Teilergebnisse zu einem Großen Ergebnis zusammenführen könnt. Kann man nun annehmen, dass das Medikament wirkt? Kann es jetzt in allen Kommunen ausgerollt werden?\\
+\textbf{Arbeitsauftrag II}: Überlegt zusammen, wie ihr eure individuellen Teilergebnisse zu einem großen Ergebnis zusammenführen könnt. Diskutiert im Plenum: Kann man nun annehmen, dass das Medikament wirkt? Kann es jetzt in allen Kommunen ausgegeben werden?\\
 
-\textbf{Arbeitsauftrag III:} Ihr habt die Daten zusammengetragen. Wenn ihr das Medikament an alle Kommunen ausrollt: Ermittelt, wie viele Menschen ihr durch eure Zusammenarbeit gerettet habt.
+\textbf{Arbeitsauftrag III:} Ihr habt die Daten zusammengetragen und eine Entscheidung gefällt, ob das Medikament ausgegeben wird. Ermittelt, wie viele Menschen ihr durch eure Zusammenarbeit gerettet habt.
 
 \newpage
 
 \subsection*{Gruppe 1}
-155000 Einwohnende\\\ \\
+
+154000 Einwohnende\\
+
 \begin{tabular}{l|l|l}
 \hline
-\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline1 & Ja & Nein \\
-2 & Nein & Nein \\
-3 & Nein & Nein \\
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline1 & Ja & Ja \\
+2 & Ja & Ja \\
+3 & Nein & Ja \\
 4 & Nein & Nein \\
 5 & Ja & Ja \\
-6 & Ja & Ja \\
+6 & Nein & Ja \\
 7 & Ja & Ja \\
 8 & Ja & Nein \\
-9 & Nein & Nein \\
-10 & Nein & Ja \\
+9 & Nein & Ja \\
+10 & Ja & Ja \\
 \end{tabular}\\
-%Analysis {cHealedWtMed = 0.6 = 3/5, cHealedNoMed = 0.2 = 1/5, medWorksGen = True}
-
-
+%Analysis {cHealedWtMed = 0.8333333, cHealedNoMed = 0.75, medWorksGen = True}
 \subsection*{Gruppe 2}
-152000 Einwohnende\\\ \\
+
+155000 Einwohnende\\
+
 \begin{tabular}{l|l|l}
 \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline11 & Ja & Ja \\
 12 & Ja & Nein \\
 13 & Ja & Ja \\
-14 & Nein & Nein \\
-15 & Nein & Nein \\
-16 & Nein & Nein \\
-17 & Nein & Ja \\
-18 & Ja & Ja \\
-19 & Ja & Nein \\
+14 & Nein & Ja \\
+15 & Ja & Ja \\
+16 & Nein & Ja \\
+17 & Ja & Ja \\
+18 & Nein & Ja \\
+19 & Ja & Ja \\
 20 & Ja & Ja \\
 \end{tabular}\\
-%Analysis {cHealedWtMed = 0.6666667=4/6, cHealedNoMed = 0.25, medWorksGen = True}
+%Analysis {cHealedWtMed = 0.85714287, cHealedNoMed = 1.0, medWorksGen = False}
+
 \newpage
 
 \subsection*{Gruppe 3}
-135000 Einwohnende\\\ \\
+
+163000 Einwohnende\\
+
 \begin{tabular}{l|l|l}
 \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline21 & Nein & Nein \\
-22 & Nein & Ja \\
-23 & Ja & Ja \\
-24 & Ja & Nein \\
-25 & Nein & Ja \\
+22 & Ja & Ja \\
+23 & Nein & Ja \\
+24 & Nein & Nein \\
+25 & Nein & Nein \\
 26 & Ja & Ja \\
-27 & Ja & Ja \\
+27 & Ja & Nein \\
 28 & Nein & Ja \\
-29 & Nein & Nein \\
-30 & Ja & Nein \\
+29 & Ja & Ja \\
+30 & Nein & Nein \\
 \end{tabular}\\
-%Analysis {cHealedWtMed = 0.6, cHealedNoMed = 0.6, medWorksGen = False}
-
+%Analysis {cHealedWtMed = 0.75, cHealedNoMed = 0.33333334, medWorksGen = True}
 \subsection*{Gruppe 4}
-197000 Einwohnende\\\ \\
+
+128000 Einwohnende\\
+
 \begin{tabular}{l|l|l}
 \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline31 & Nein & Nein \\
-32 & Nein & Ja \\
+32 & Nein & Nein \\
 33 & Nein & Ja \\
 34 & Ja & Ja \\
 35 & Nein & Ja \\
-36 & Nein & Nein \\
-37 & Nein & Ja \\
-38 & Nein & Ja \\
-39 & Ja & Ja \\
+36 & Ja & Ja \\
+37 & Ja & Ja \\
+38 & Ja & Ja \\
+39 & Ja & Nein \\
 40 & Ja & Ja \\
 \end{tabular}\\
-%Analysis {cHealedWtMed = 1.0, cHealedNoMed = 0.71428573, medWorksGen = True}
+%Analysis {cHealedWtMed = 0.8333333, cHealedNoMed = 0.5, medWorksGen = True}
 
-\pagebreak
+\newpage
+
 
 \subsection*{Gruppe 5}
-168000 Einwohnende\\\ \\
+
+184000 Einwohnende\\
+
 \begin{tabular}{l|l|l}
 \hline
-\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline41 & Ja & Nein \\
-42 & Nein & Ja \\
-43 & Nein & Ja \\
+\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline41 & Nein & Nein \\
+42 & Ja & Ja \\
+43 & Ja & Ja \\
 44 & Ja & Ja \\
 45 & Ja & Ja \\
-46 & Nein & Nein \\
-47 & Nein & Ja \\
-48 & Ja & Ja \\
-49 & Ja & Nein \\
-50 & Ja & Ja \\
+46 & Nein & Ja \\
+47 & Ja & Nein \\
+48 & Ja & Nein \\
+49 & Ja & Ja \\
+50 & Nein & Nein \\
 \end{tabular}\\
-%Analysis {cHealedWtMed = 0.6666667, cHealedNoMed = 0.75, medWorksGen = False}
-
+%Analysis {cHealedWtMed = 0.71428573, cHealedNoMed = 0.33333334, medWorksGen = True}
 \subsection*{Gruppe 6}
-125000 Einwohnende\\\ \\
+
+111000 Einwohnende\\
+
 \begin{tabular}{l|l|l}
 \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline51 & Ja & Ja \\
-52 & Ja & Ja \\
+52 & Nein & Ja \\
 53 & Ja & Ja \\
-54 & Ja & Nein \\
-55 & Ja & Ja \\
-56 & Ja & Nein \\
+54 & Nein & Nein \\
+55 & Ja & Nein \\
+56 & Ja & Ja \\
 57 & Nein & Ja \\
-58 & Nein & Nein \\
-59 & Ja & Ja \\
-60 & Ja & Nein \\
+58 & Ja & Ja \\
+59 & Nein & Ja \\
+60 & Nein & Nein \\
 \end{tabular}\\
-%Analysis {cHealedWtMed = 0.625, cHealedNoMed = 0.5, medWorksGen = True}
+%Analysis {cHealedWtMed = 0.8, cHealedNoMed = 0.6, medWorksGen = True}
 
-\pagebreak
+\newpage
 
 \subsection*{Gruppe 7}
-138000 Einwohnende\\\ \\
+
+101000 Einwohnende\\
+
 \begin{tabular}{l|l|l}
 \hline
 \multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Personen-\\ kennzahl\end{tabular}} & \begin{tabular}[c]{@{}l@{}}Medikament\\ genommen?\end{tabular} & \multicolumn{1}{l|}{Geheilt} \\ \hline61 & Ja & Ja \\
@@ -140,11 +152,13 @@ Kommen alle Kommunen auf dasselbe Ergebnis?\\
 64 & Nein & Ja \\
 65 & Nein & Nein \\
 66 & Ja & Ja \\
-67 & Ja & Ja \\
+67 & Nein & Ja \\
 68 & Nein & Nein \\
-69 & Nein & Nein \\
-70 & Ja & Ja \\
+69 & Ja & Nein \\
+70 & Nein & Ja \\
 \end{tabular}\\
-%Analysis {cHealedWtMed = 0.8333333, cHealedNoMed = 0.25, medWorksGen = True}
+%Analysis {cHealedWtMed = 0.6, cHealedNoMed = 0.6, medWorksGen = False}
+
+
 
 \end{document}
