@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+
+function drawArrArr(a,x,y){
+  let o = document.createElement('div');
+  o.innerHTML = ""
+  for (i=0;i<a.length;i++){
+    o.innerHTML += "["+a[i]+"]";
+  }
+  o.style.position = 'absolute';
+  o.style.left = x+'px';
+  o.style.top = y+'px';
+  //o.onclick = function(){o.innerHTML = "Yay!"};
+  document.body.appendChild(o);
+}
+
+function take(a,n) {
+  let len = Math.min(n,a.length);
+  let r = new Array(len);
+  for (i=0; i<len; i++) {
+    r[i] = a[i];
+  }
+  return r;
+}
+
+function drop(a,n) {
+  let len = Math.min(0,Math.abs(a.length-n));
+  let r = new Array(len);
+  for (i=n; i<a.length; i++) {
+    r[i-n] = a[i];
+  }
+  return r;
+}
+
+function split(a){
+  return [take(a,Math.round(a.length / 2)), drop(a,Math.round(a.length/2))]
+}
+
+function drawArr(a,x,y){
+  let o = document.createElement('div');
+  o.innerHTML = "["+a+"]"
+  o.style.position = 'absolute';
+  o.style.left = x+'px';
+  o.style.top = y+'px';
+  o.onclick = function(){
+    if(a.length > 1){
+      let sp = split(a);
+      onew1 = drawArr(sp[0],x,y);
+      onew1x = parseInt(onew1.style.left);
+      onew1w = onew1.offsetWidth;
+      console.log("onew1 x and offset: "+onew1x+" "+onew1w+" "+(onew1x+onew1w));
+      onew2 = drawArr(sp[1],onew1x+onew1w,y);
+      document.body.removeChild(o);
+      document.body.appendChild(onew1);
+      document.body.appendChild(onew2);
+    }
+  };
+  document.body.appendChild(o);
+  return o;
+}
+
+const arr = [1,2,3,4,5];
+drawArr(arr,100,100);
+
+
+
+</script>
+
+</body>
+</html>
