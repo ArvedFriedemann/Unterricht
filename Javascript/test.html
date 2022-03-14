@@ -8,10 +8,20 @@
   el.src = "computerAnswer.svg";
   el.style.top = "100px"
   el.style.left = "100px"
+  el.style.position = "absolute"
   document.body.appendChild(el);
+
+  var el2 = new Image();
+  el2.src = "computerAnswer.svg";
+  el2.style.top = "100px"
+  el2.style.left = "200px"
+  el2.style.position = "absolute"
+  document.body.appendChild(el2);
+
   let counter = 0;
   function onTick() {
-    el.style.marginLeft = counter+"px";
+    el.style.left = counter+"px";
+    //el.style.z_index = sin(counter)+"px";
     counter++;
   }
 
