@@ -6,6 +6,7 @@ import Control.Monad
 import Data.List.Split
 import Data.List
 import Control.Exception
+import Debug.Trace
 --import Control.Monad.Trans.State.Strict
 
 type Items a = [a]
@@ -52,7 +53,14 @@ game cats gs@(cluedo, open, hands) = flip catch (\(e :: IOException) -> (putStrL
       idx <- readLn
       putStrLn "Cards"
       printCats cats
-      lst <- readLn
+      let
+        readStuff = do
+          lst <- readLn
+          if (or [(r <= 0 || length cats < r) ||
+                    (c <=0 || length (cats !! (r - 1)) < c) | (r,c) <- lst])
+          then putStrLn "Indices don't fit!" >> readStuff
+          else return lst
+      lst <- readStuff
       let choice = [(cats !! (r - 1)) !! (c - 1) | (r,c) <- lst]
       putStrLn $ "Asking: "++show choice
       case hasCard (hands !! (idx - 1)) choice of
