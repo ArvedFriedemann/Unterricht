@@ -12,7 +12,7 @@ main = do
   gs@(cluedo,open,hands) <- distribute defaultCluedo numPl
   --print gs
   showPlayer gs 0
-  game gs
+  game defaultCluedo gs
 
 showPlayer :: GameState String -> Int -> IO ()
 showPlayer gs@(cluedo,open,hands) idx = if idx < length hands
@@ -22,4 +22,5 @@ showPlayer gs@(cluedo,open,hands) idx = if idx < length hands
     case ans of
       "Y" -> (print $ hands !! idx) >> forM [1..50] (const $ putStrLn "\n") >> showPlayer gs (idx + 1)
       "N" -> return ()
+      _ -> return ()
   else putStrLn "No more players"

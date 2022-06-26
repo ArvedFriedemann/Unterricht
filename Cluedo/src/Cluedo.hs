@@ -15,7 +15,6 @@ type Hands a = [Hand a]
 type Cluedo a = Items a       --Secret objectives
 type GameState a = (Cluedo a, Items a, Hands a)
 
-
 --distirbutes the cluedo, leftover cards and players hands
 distribute :: Categories a -> Int -> IO (Cluedo a, Items a, Hands a)
 distribute cats playerCount = do
@@ -40,26 +39,35 @@ splitEven lst c = if (length lst) `mod` c /= 0
 hasCard :: (Eq a) => Hand a -> [a] -> Maybe a
 hasCard hnd lst = find (`elem` lst) hnd
 
-game :: (Eq a, Ord a, Read a, Show a) => GameState a -> IO ()
-game gs@(cluedo, open, hands) = flip catch (\(e :: IOException) -> (putStrLn $ show e) >> game gs) $ do
-  if not $ null open 
+game :: Categories String -> GameState String -> IO ()
+game cats gs@(cluedo, open, hands) = flip catch (\(e :: IOException) -> (putStrLn $ show e) >> game cats gs) $ do
+  if not $ null open
   then putStrLn "Open Cards:" >> print open
   else return ()
   putStrLn "ask or accuse? (A / C)"
   ans <- getLine
-  case head ans of
+  case head (ans ++ " ") of
     'A' -> do
       putStrLn "Player Index:"
       idx <- readLn
       putStrLn "Cards"
+      printCats cats
       lst <- readLn
-      case hasCard (hands !! (idx - 1)) lst of
+      let choice = [(cats !! (r - 1)) !! (c - 1) | (r,c) <- lst]
+      putStrLn $ "Asking: "++show choice
+      case hasCard (hands !! (idx - 1)) choice of
         Nothing -> putStrLn "Has Nothing"
         Just x -> putStrLn $ "Has " ++ show x
-      game gs
+      game cats gs
     'C' -> do
       putStrLn "Accusation:"
       lst <- readLn
       if (sort lst) == (sort cluedo)
       then putStrLn "Correct! You solved the riddle!"
-      else putStrLn "Wrong Accusation..." >> game gs
+      else putStrLn "Wrong Accusation..." >> game cats gs
+    _ -> game cats gs
+
+printCats :: Categories String -> IO ()
+printCats cats = forM_ (zip cats [1..]) $ \(c,idx) -> do
+  putStr $ show idx ++": "
+  print $ map (\(i,c') -> "("++show i++": "++c'++") ") (zip [1..] c)
